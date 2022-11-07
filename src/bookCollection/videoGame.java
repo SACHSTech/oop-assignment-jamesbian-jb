@@ -1,21 +1,21 @@
 package bookCollection;
 
-public class Movie extends Media {
+public class videoGame extends Media{
 
-    private String ageAdvised;
+    private boolean isStardew;
 
-    public Movie(String theTitle, String theGenre, String theAuthor, int publishDate, double theDecimal, String ageRestrict) {
+    public videoGame(String theTitle, String theGenre, String theAuthor, int publishDate, double theDecimal, boolean stardewCheck) {
 
         super(theTitle, theGenre, theAuthor, publishDate, theDecimal);
-        ageAdvised = ageRestrict;
+        isStardew = stardewCheck;
 
     }
 
-    public String getAgeAdvised() {
-        return ageAdvised;
 
+    boolean getStardew() {
+        return isStardew;
     }
-
+    
     public String toString() {
         System.out.println("--------------------------------------");
         System.out.println("Title: " + getTitle());
@@ -23,9 +23,10 @@ public class Movie extends Media {
         System.out.println("Author: " + getAuthor());
         System.out.println("Date Published: " + publishDate());
         System.out.println("Dewey Decimal: " + getDecimal());
-        System.out.println("Recommeneded for Children: " + getAgeAdvised());
+        System.out.println("Is it the best game ever made: " + getStardew());
 
         return "--------------------------------------";
-        
     }
+    
 }
+ 
