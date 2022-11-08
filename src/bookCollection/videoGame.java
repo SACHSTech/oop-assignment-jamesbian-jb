@@ -21,7 +21,7 @@ public class videoGame extends Media{
         System.out.println("Title: " + getTitle());
         System.out.println("Genre: " + getGenre());
         System.out.println("Author: " + getAuthor());
-        System.out.println("Date Published: " + publishDate());
+        System.out.println("Date Published: " + getPublishDate());
         System.out.println("Dewey Decimal: " + getDecimal());
         System.out.println("Is it the best game ever made: " + getStardew());
 

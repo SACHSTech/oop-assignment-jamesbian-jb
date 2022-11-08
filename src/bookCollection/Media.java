@@ -28,7 +28,7 @@ public class Media {
         return author;
     }
 
-    public int publishDate() {
+    public int getPublishDate() {
         return date;
     }
 
