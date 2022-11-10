@@ -2,7 +2,7 @@ package bookCollection;
 
 import java.io.IOException;
 
-public class Main {
+public class Library {
     
     public static void main(String[] args) throws IOException {
         

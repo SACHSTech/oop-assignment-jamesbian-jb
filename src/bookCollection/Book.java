@@ -5,8 +5,8 @@ public class Book extends Media{
     private boolean isOnline;
     private int copiesAvailible;
 
-    public Book(String theTitle, String theGenre, String theAuthor, int publishDate, double theDecimal, boolean hasOnline,int numCopies) {
-        super(theTitle, theGenre, theAuthor, publishDate, theDecimal);
+    public Book(String theTitle, String theGenre, String theAuthor, int publishDate, double theDecimal, boolean hasOnline,int numCopies, int borrow) {
+        super(theTitle, theGenre, theAuthor, publishDate, theDecimal, borrow);
         isOnline = hasOnline;
         copiesAvailible = numCopies;
 
@@ -21,6 +21,10 @@ public class Book extends Media{
     public int getCopies() {
         return copiesAvailible;
 
+    }
+    
+    public int overallFame() {
+        return (getBorrowed()/getPublishDate());
     }
 
     public String toString() {
