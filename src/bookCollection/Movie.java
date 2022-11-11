@@ -3,14 +3,13 @@ package bookCollection;
 public class Movie extends Media {
 
     private String ageAdvised;
-    private boolean viewDescribed;
+    private boolean describedVideo;
 
     public Movie(String theTitle, String theGenre, String theAuthor, int publishDate, double theDecimal, String ageRestrict, boolean hasDescribed, int borrow) {
 
         super(theTitle, theGenre, theAuthor, publishDate, theDecimal, borrow);
         ageAdvised = ageRestrict;
-        viewDescribed = hasDescribed;
-        
+        describedVideo = hasDescribed;
 
     }
 
@@ -20,12 +19,12 @@ public class Movie extends Media {
     }
 
     public boolean getDescribed() {
-        return viewDescribed;
+        return describedVideo;
 
     }
 
     public int overallFame() {
-        return (getBorrowed()/getPublishDate());
+        return (getBorrowed() / getPublishDate());
     }
 
     public String toString() {
@@ -39,6 +38,6 @@ public class Movie extends Media {
         System.out.println("Availble in described video: " + getDescribed());
 
         return "--------------------------------------";
-        
+
     }
 }

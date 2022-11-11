@@ -1,6 +1,6 @@
 package bookCollection;
 
-public class videoGame extends Media{
+public class videoGame extends Media {
 
     private boolean isStardew;
 

@@ -45,5 +45,3 @@ public abstract class Media {
     public abstract int overallFame();
 
 }
-
-
