@@ -28,7 +28,7 @@ public class videoGame extends Media {
         System.out.println("Date Published: " + getPublishDate());
         System.out.println("Dewey Decimal: " + getDecimal());
         System.out.println("Is stardew: " + getStardew());
-
+        System.out.println("Overall popularity: " + overallFame());
         return "--------------------------------------";
     }
     
