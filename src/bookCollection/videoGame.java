@@ -4,9 +4,9 @@ public class videoGame extends Media {
 
     private boolean isStardew;
 
-    public videoGame(String theTitle, String theGenre, String theAuthor, int publishDate, double theDecimal, boolean stardewCheck, int fame) {
+    public videoGame(String theTitle, String theGenre, String theAuthor, int publishDate, double theDecimal, String yourReview, boolean stardewCheck, int fame) {
 
-        super(theTitle, theGenre, theAuthor, publishDate, theDecimal, fame);
+        super(theTitle, theGenre, theAuthor, publishDate, theDecimal, fame, yourReview);
         isStardew = stardewCheck;
 
     }

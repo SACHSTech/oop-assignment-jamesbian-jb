@@ -5,9 +5,9 @@ public class Movie extends Media {
     private String ageAdvised;
     private boolean describedVideo;
 
-    public Movie(String theTitle, String theGenre, String theAuthor, int publishDate, double theDecimal, String ageRestrict, boolean hasDescribed, int borrow) {
+    public Movie(String theTitle, String theGenre, String theAuthor, int publishDate, double theDecimal, String ageRestrict, String yourReview, boolean hasDescribed, int borrow) {
 
-        super(theTitle, theGenre, theAuthor, publishDate, theDecimal, borrow);
+        super(theTitle, theGenre, theAuthor, publishDate, theDecimal, borrow, yourReview);
         ageAdvised = ageRestrict;
         describedVideo = hasDescribed;
 
