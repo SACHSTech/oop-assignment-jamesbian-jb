@@ -20,7 +20,7 @@ public class Library {
     public List<Book> findBooksByAuthor(String author) {
         // TODO: search book list by author
         List<Book> authorBooks = new ArrayList<Book>();
-        for (Book book: allBooks) {
+        for (Book book : allBooks) {
             if (book.getAuthor().equals(author)) {
                 authorBooks.add(book);
             }
@@ -31,6 +31,17 @@ public class Library {
     public List<Movie> findMoviesByAuthor(String author) {
         // TODO: search book list by author
         return allMovies;
+    }
+
+    public List<Media> findAllByAuthor(String author) {
+        List<Media> authorMedia = new ArrayList<Media>();
+        List<Media> allMedia = Stream.concat(allBooks.stream(), allMovies.stream()).toList();
+        for (Media media : allMedia) {
+            if (media.getAuthor().equals(author)) {
+                authorMedia.add(media);
+            }
+        }
+        return authorMedia;
     }
 
     public void addBook(Book book) {
@@ -45,10 +56,6 @@ public class Library {
         allMagazines.add(magazine);
     }
 
-    // List<Media> newList = Stream.concat(allBooks.stream(),
-    // allMovies.stream()).toList();
-    // return allBooks;
-
     public static void main(String[] args) throws IOException {
 
         // Initializing Objects
@@ -58,7 +65,7 @@ public class Library {
         Book macBeth = new Book("Macbeth", "Dramatic Play", "William Shakespeare", 1606, 831, 212892, " ");
         Magazine maCleans = new Magazine("Maclean's Issue 138: Trudeau Midlife Crisis", "Non-Fiction",
                 "Maclean Archives", 2020, 92, 1902, "Editorial", " ");
-        Movie top_Gun = new Movie("Top Gun Maverick", "Action", "Ehren Kruger", 2022, 704, "13+", " ", true, 16094);
+        Movie top_Gun = new Movie("Top Gun Maverick", "Action", "William Shakespeare", 2022, 704, "13+", " ", true, 16094);
         Movie hunger_Games = new Movie("The Hunger Games", "Action", "Suzanne Collins", 2008, 733, "13+", " ", false,
                 13014);
         videoGame stardew_Valley;
@@ -86,6 +93,8 @@ public class Library {
         String findAuthor;
         int findDate;
         String searchAuthor;
+        String searchTitle;
+        int searchType;
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.print(" ");
@@ -112,6 +121,24 @@ public class Library {
                 case 1:
                     List<Book> allBooks = bomenaLibrary.getListOfBooks();
                     System.out.println(allBooks);
+
+                    System.out.println("Enter search method: ");
+                    searchType = Integer.parseInt(input.readLine());
+
+
+                    switch (searchType) {
+                        case 1:
+                            System.out.println("Enter Author name: ");
+                            searchAuthor = input.readLine();
+                            List<Media> authorMedia = bomenaLibrary.findAllByAuthor(searchAuthor);
+                            System.out.println(authorMedia);
+                            break;
+
+                        case 2:
+                            break;
+
+                    }
+
                     break;
                 case 2:
 
@@ -127,9 +154,7 @@ public class Library {
                     Book newBook = new Book(findTitle, findGenre, findAuthor, findDate, 0, 0, " ");
                     break;
                 case 3:
-                    System.out.println("Enter Author name: ");
-                    searchAuthor = input.readLine();
-                    List<Book> authorBooks = bomenaLibrary.findBooksByAuthor(searchAuthor);
+
                     // newBook.setPersonalReview("a");
                     break;
 

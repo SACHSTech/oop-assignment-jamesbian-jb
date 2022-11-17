@@ -5,26 +5,32 @@ public class Movie extends Media {
     private String ageAdvised;
     private boolean describedVideo;
 
-    public Movie(String theTitle, String theGenre, String theAuthor, int publishDate, double theDecimal, String ageRestrict, String yourReview, boolean hasDescribed, int borrow) {
+    public Movie(String theTitle, String theGenre, String theAuthor, int publishDate, double theDecimal,
+            String ageRestrict, String yourReview, boolean hasDescribed, int borrow) {
 
         super(theTitle, theGenre, theAuthor, publishDate, theDecimal, borrow, yourReview);
         ageAdvised = ageRestrict;
         describedVideo = hasDescribed;
-
     }
 
     public String getAgeAdvised() {
         return ageAdvised;
-
     }
 
     public boolean getDescribed() {
         return describedVideo;
-
     }
 
     public int overallFame() {
         return (getBorrowed() / getPublishDate());
+    }
+
+    public void setAgeAdvised(String ageAdvised) {
+        this.ageAdvised = ageAdvised;
+    }
+
+    public void setDescribedVideo(boolean describedVideo) {
+        this.describedVideo = describedVideo;
     }
 
     public String toString() {
