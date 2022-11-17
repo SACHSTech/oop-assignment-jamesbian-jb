@@ -2,7 +2,6 @@ package bookCollection;
 
 public class Book extends Media{
 
-
     public Book(String theTitle, String theGenre, String theAuthor,int publishDate, double theDecimal, int borrow, String yourReview) {
         super(theTitle, theGenre, theAuthor, publishDate, theDecimal, borrow, yourReview);
 
