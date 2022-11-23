@@ -4,9 +4,9 @@ public class videoGame extends Media {
 
     private boolean isStardew;
 
-    public videoGame(String theTitle, String theGenre, String theAuthor, int publishDate, double theDecimal, String yourReview, boolean stardewCheck, int fame) {
+    public videoGame(String theTitle, String theGenre, String theAuthor, int publishDate, double theDecimal, String yourReview, boolean stardewCheck, int borrow) {
 
-        super(theTitle, theGenre, theAuthor, publishDate, theDecimal, fame, yourReview);
+        super(theTitle, theGenre, theAuthor, publishDate, theDecimal, borrow, yourReview);
         isStardew = stardewCheck;
 
     }
@@ -27,7 +27,7 @@ public class videoGame extends Media {
         System.out.println("Author: " + getAuthor());
         System.out.println("Date Published: " + getPublishDate());
         System.out.println("Dewey Decimal: " + getDecimal());
-        System.out.println("Is stardew: " + getStardew());
+        System.out.println("Is the best game in the world: " + getStardew());
         System.out.println("Overall popularity: " + overallFame());
         return "--------------------------------------";
     }

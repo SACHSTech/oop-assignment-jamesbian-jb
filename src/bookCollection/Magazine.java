@@ -15,4 +15,16 @@ public class Magazine extends Book {
         return extraFeature;
     }
 
+    public String toString() {
+        System.out.println("--------------------------------------");
+        System.out.println("Title: " + getTitle());
+        System.out.println("Genre: " + getGenre());
+        System.out.println("Author: " + getAuthor());
+        System.out.println("Date Published: " + getPublishDate());
+        System.out.println("Dewey Decimal: " + getDecimal());
+        System.out.println("Bonus Sections: " + getExtraFeature());
+
+        return "--------------------------------------";
+        
+    }
 }
