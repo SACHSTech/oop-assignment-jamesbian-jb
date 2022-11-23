@@ -14,9 +14,12 @@ public class Main {
     List<videoGame> allvideoGames = new ArrayList<videoGame>();
     List<Media> authorWorks = new ArrayList<Media>();
     List<Media> titleMedia = new ArrayList<Media>();
-    List<Media> allMedia = Stream.concat(allBooks.stream(), allMovies.stream()).toList();
+    List<Media> allMedia = new ArrayList<Media>();
 
     public List<Media> getListOfMedias() {
+        allMedia = Stream.concat(allBooks.stream(), allMovies.stream()).toList();
+        allMedia = Stream.concat(allMedia.stream(), allMagazines.stream()).toList();
+        allMedia = Stream.concat(allMedia.stream(), allvideoGames.stream()).toList();
         return allMedia;
     }
 
@@ -36,6 +39,11 @@ public class Main {
             }
         }
         return titleMedia;
+    }
+
+    public int getBookCount () {
+        return allBooks.size();
+        
     }
 
     // Intializing Methods to add Objects
@@ -76,7 +84,6 @@ public class Main {
                 120203);
 
         Main bomenaMain = new Main();
-        bomenaMain.getListOfMedias();
 
         // Adding objects into the main function
         bomenaMain.addBook(station_11);
@@ -89,6 +96,9 @@ public class Main {
         bomenaMain.addMovie(hunger_Games);
         bomenaMain.addvideoGame(stardew_Valley);
         bomenaMain.addvideoGame(shotgun_Chess);
+        bomenaMain.getListOfMedias();
+
+        
 
         // Initializing Input Variables
         String name;
@@ -120,6 +130,7 @@ public class Main {
             System.out.println("1 - Open Main Catalogue ");
             System.out.println("2 - Add a new book ");
             System.out.println("3 - Review a Media");
+            System.out.println("4 - Library statistics ");
             action = Integer.parseInt(input.readLine());
 
             switch (action) {
@@ -153,8 +164,12 @@ public class Main {
                             break;
 
                         case 3:
+
                             List<Media> allMedias = bomenaMain.getListOfMedias();
+                            int numBooks = bomenaMain.getBookCount();
+                            System.out.println(numBooks + " in the Catalogue.");
                             System.out.println(allMedias);
+
 
                     }
 
@@ -178,6 +193,10 @@ public class Main {
 
                     // newBook.setPersonalReview("a");
                     break;
+                case 4:
+                    int numBooks = bomenaMain.getBookCount();
+                    System.out.println("Total number of Books: " + numBooks);
+                    
 
             }
 
