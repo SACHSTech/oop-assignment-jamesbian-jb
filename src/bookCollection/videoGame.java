@@ -29,7 +29,7 @@ public class videoGame extends Media {
         System.out.println("Dewey Decimal: " + getDecimal());
         System.out.println("Is the best game in the world: " + getStardew());
         System.out.println("Overall popularity: " + overallFame());
-        return "--------------------------------------";
+        return "-";
     }
     
 }

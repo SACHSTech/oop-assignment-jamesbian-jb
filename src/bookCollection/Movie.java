@@ -43,7 +43,7 @@ public class Movie extends Media {
         System.out.println("Recommended for Children: " + getAgeAdvised());
         System.out.println("Availble in described video: " + getDescribed());
 
-        return "--------------------------------------";
+        return "-";
 
     }
 }

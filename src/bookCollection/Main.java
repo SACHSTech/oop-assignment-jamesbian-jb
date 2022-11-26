@@ -6,20 +6,26 @@ import bookCollection.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
+
+    // Intializing Arraylists
     List<Book> allBooks = new ArrayList<Book>();
     List<Movie> allMovies = new ArrayList<Movie>();
     List<Magazine> allMagazines = new ArrayList<Magazine>();
-    List<videoGame> allvideoGames = new ArrayList<videoGame>();
+    List<videoGame> allVideoGames = new ArrayList<videoGame>();
+    List<historicalText> allHistoricalText = new ArrayList<historicalText>();
     List<Media> authorWorks = new ArrayList<Media>();
     List<Media> titleMedia = new ArrayList<Media>();
     List<Media> allMedia = new ArrayList<Media>();
 
+    // allMedia becomes a complete Arraylist of all types of Objects
     public List<Media> getListOfMedias() {
         allMedia = Stream.concat(allBooks.stream(), allMovies.stream()).toList();
         allMedia = Stream.concat(allMedia.stream(), allMagazines.stream()).toList();
-        allMedia = Stream.concat(allMedia.stream(), allvideoGames.stream()).toList();
+        allMedia = Stream.concat(allMedia.stream(), allVideoGames.stream()).toList();
+        allMedia = Stream.concat(allMedia.stream(), allHistoricalText.stream()).toList();
         return allMedia;
     }
 
@@ -41,9 +47,10 @@ public class Main {
         return titleMedia;
     }
 
-    public int getBookCount () {
+    // Returns length of Arraylist
+    public int getBookCount() {
         return allBooks.size();
-        
+
     }
 
     // Intializing Methods to add Objects
@@ -60,10 +67,14 @@ public class Main {
     }
 
     public void addvideoGame(videoGame videoGame) {
-        allvideoGames.add(videoGame);
+        allVideoGames.add(videoGame);
     }
 
-    public static void main(String[] args) throws IOException {
+    public void historicalText(historicalText historicalText) {
+        allHistoricalText.add(historicalText);
+    }
+
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         // Initializing Objects
         Book station_11 = new Book("Station 11", "Science Fiction", "Emily Mandel", 2014, 302, 20912, " ");
@@ -82,7 +93,8 @@ public class Main {
                 19200);
         videoGame shotgun_Chess = new videoGame("Shotgun Chess", "Action", "PUNKCAKE", 2022, 901.201, " ", false,
                 120203);
-
+        historicalText charter = new historicalText("Canadian Charter of Rights", "Non Fiction", "Pierre Elliot Trudeau", 1982, 49.7, 762, " ",
+                " Entertainment Gossip ");
         Main bomenaMain = new Main();
 
         // Adding objects into the main function
@@ -96,13 +108,10 @@ public class Main {
         bomenaMain.addMovie(hunger_Games);
         bomenaMain.addvideoGame(stardew_Valley);
         bomenaMain.addvideoGame(shotgun_Chess);
+        bomenaMain.historicalText(charter);
         bomenaMain.getListOfMedias();
 
-        
-
         // Initializing Input Variables
-        String name;
-        String surname;
         int action;
         String findTitle;
         String findGenre;
@@ -116,14 +125,11 @@ public class Main {
         System.out.print(" ");
         System.out.println("---------------------------------------");
         System.out.println("Welcome to the Bomena Library");
-        System.out.println(" ");
-        System.out.println("Please state your name: ");
-        System.out.print("First Name: ");
-        name = input.readLine();
-        System.out.print("Last Name: ");
-        surname = input.readLine();
-        System.out.println("Hello, " + name + " " + surname);
+        System.out.println("Logging into admin systems...");
+        System.out.println("");
+        TimeUnit.SECONDS.sleep(5);
 
+        // Switchcase that allows user to
         while (true) {
 
             System.out.println("Please type the corresponding number to the action you would like to do. ");
@@ -137,13 +143,23 @@ public class Main {
 
                 case 1:
                     // Determining a Search Method
+                    try {
+                        System.out.println("Enter search method: ");
+                        System.out.println("1 - By Author ");
+                        System.out.println("2 - By Title ");
+                        System.out.println("3 - All Medias ");
 
-                    System.out.println("Enter search method: ");
-                    System.out.println("1 - By Author ");
-                    System.out.println("2 - By Title ");
-                    System.out.println("3 - All Medias ");
+                        searchType = Integer.parseInt(input.readLine());
+                    } catch (Exception NumberFormatException) {
+                        System.out.println("Enter a valid answer.");
+                    } finally {
+                        System.out.println("Enter search method: ");
+                        System.out.println("1 - By Author ");
+                        System.out.println("2 - By Title ");
+                        System.out.println("3 - All Medias ");
 
-                    searchType = Integer.parseInt(input.readLine());
+                        searchType = Integer.parseInt(input.readLine());
+                    }
 
                     switch (searchType) {
 
@@ -163,13 +179,13 @@ public class Main {
                             System.out.println(titleMedia);
                             break;
 
+                        // List of all Availble Media
                         case 3:
 
                             List<Media> allMedias = bomenaMain.getListOfMedias();
                             int numBooks = bomenaMain.getBookCount();
                             System.out.println(numBooks + " in the Catalogue.");
                             System.out.println(allMedias);
-
 
                     }
 
@@ -196,7 +212,9 @@ public class Main {
                 case 4:
                     int numBooks = bomenaMain.getBookCount();
                     System.out.println("Total number of Books: " + numBooks);
+                    System.out.println("Total types of Media: 5");
                     
+                    break;
 
             }
 

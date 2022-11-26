@@ -7,3 +7,5 @@
 
 ## Summary
 *Include a brief summary that describes your system that your are modelling*
+
+<image src = "https://github.com/SACHSTech/oop-assignment-jamesbian-jb/blob/main/src/bookCollection/class-diagram.png">

@@ -1,24 +1,20 @@
 package bookCollection;
 
-public class Magazine extends Book {
+public class historicalText extends Book {
 
-    private String extraFeature;
+    private String topicOfHistory;
 
-    public Magazine(String theTitle, String theGenre, String theAuthor, int publishDate, double theDecimal, int borrow, String yourReview, String extraContent) {
+    public historicalText(String theTitle, String theGenre, String theAuthor, int publishDate, double theDecimal, int borrow, String yourReview, String historyType) {
 
         super(theTitle, theGenre, theAuthor, publishDate, theDecimal, borrow, yourReview);
-        extraFeature = extraContent;
+        topicOfHistory = historyType;
 
     }
 
-    public String getExtraFeature() {
-        return extraFeature;
+    public String getHistory() {
+        return topicOfHistory;
     }
 
-    public void setExtraFeature(String extraFeature) {
-        this.extraFeature = extraFeature;
-    }
-    
     public String toString() {
         System.out.println("--------------------------------------");
         System.out.println("Title: " + getTitle());
@@ -26,11 +22,9 @@ public class Magazine extends Book {
         System.out.println("Author: " + getAuthor());
         System.out.println("Date Published: " + getPublishDate());
         System.out.println("Dewey Decimal: " + getDecimal());
-        System.out.println("Bonus Sections: " + getExtraFeature());
+        System.out.println("Type of History: " + getHistory());
 
         return "-";
         
     }
-
-
 }
