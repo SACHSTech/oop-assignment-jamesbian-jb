@@ -5,14 +5,14 @@ public class Movie extends Media {
     /**
      * Movie constructor
      * 
-     * @param theTitle Media Title
-     * @param theGenre Media Genre
-     * @param theAuthor Media Author
-     * @param publishDate Publication Date of Media
-     * @param theDecimal Dewey Decimal of Genre
-     * @param borrow Times Borrowed
-     * @param yourReview Publication Date of Media
-     * @param ageAdvised Age reccommendation of Movie
+     * @param theTitle       Media Title
+     * @param theGenre       Media Genre
+     * @param theAuthor      Media Author
+     * @param publishDate    Publication Date of Media
+     * @param theDecimal     Unique Movie ID
+     * @param borrow         Times Borrowed
+     * @param yourReview     Publication Date of Media
+     * @param ageAdvised     Age reccommendation of Movie
      * @param describedVideo Availbility of Described Video
      * @author J.Bian
      */
@@ -50,15 +50,8 @@ public class Movie extends Media {
 
     // Returns all information of Movie
     public String toString() {
-        return
-            "--------------------------------------\n" + 
-            "Title: "  + getTitle() + "\n" + 
-            "Genre: " + getGenre() + "\n" + 
-            "Author: " + getAuthor() + "\n" +
-            "Date Published: " + getPublishDate() + "\n" + 
-            "Dewey Decimal: " + getDecimal() + "\n" + 
-            "Age Restriction: " + getAgeAdvised() + "\n" + 
-            "Described Video Availble: " + getDescribed() + "\n";
+        return super.toString() +
+                "Age Restriction: " + getAgeAdvised() + "\n" +
+                "Described Video Availble: " + getDescribed() + "\n";
     }
 }
-

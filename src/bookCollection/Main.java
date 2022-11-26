@@ -82,6 +82,18 @@ public class Main {
         return titleMedia;
     }
 
+    public Media getByUniqueID(double uniqueID) {
+        Media mediaFound = null;
+        for (Media media : allMedia) {
+            if (media.getDecimal() == uniqueID) {
+                mediaFound = media;
+                break;
+            }
+        }
+        return mediaFound;
+        
+    }
+
     // Returns length of Arraylist
     public int getBookCount() {
         return allBooks.size();
@@ -166,6 +178,8 @@ public class Main {
         String searchAuthor;
         String searchTitle;
         int searchType;
+        double searchID;
+        String enterReview;
 
         Main bomenaMain = new Main();
         bomenaMain.intialize();
@@ -233,8 +247,14 @@ public class Main {
 
                     break;
                 case 3:
-
-                    // .setPersonalReview("a");
+                    System.out.println("Enter Unique ID of Media: ");
+                    searchID = Double.parseDouble(input.readLine());
+                    Media idMedia = bomenaMain.getByUniqueID(searchID);
+                    System.out.println(idMedia);
+                    System.out.println("Enter your review on the Book: ");
+                    enterReview = input.readLine();
+                    idMedia.setPersonalReview(enterReview);
+                    bomenaMain.getListOfMedias();
                     break;
                 case 4:
                     int numBooks = bomenaMain.getBookCount();

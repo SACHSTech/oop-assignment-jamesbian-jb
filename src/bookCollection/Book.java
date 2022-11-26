@@ -9,7 +9,7 @@ public class Book extends Media {
      * @param theGenre    Media Genre
      * @param theAuthor   Media Author
      * @param publishDate Publication Date of Media
-     * @param theDecimal  Dewey Decimal of Genre
+     * @param theDecimal  Unique Book ID
      * @param borrow      Times Borrowed
      * @param yourReview  User's Opinion of Media
      * @author J.Bian
@@ -28,11 +28,6 @@ public class Book extends Media {
 
     // Returns all information of Book
     public String toString() {
-        return "--------------------------------------\n" +
-                "Title: " + getTitle() + "\n" +
-                "Genre: " + getGenre() + "\n" +
-                "Author: " + getAuthor() + "\n" +
-                "Date Published: " + getPublishDate() + "\n" +
-                "Dewey Decimal: " + getDecimal() + "\n";
+        return super.toString();
     }
 }

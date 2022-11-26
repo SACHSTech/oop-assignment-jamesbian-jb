@@ -2,16 +2,15 @@ package bookCollection;
 
 public abstract class Media {
 
-
     /**
      * Media constructor
      * 
-     * @param title Media Title
-     * @param genre Media Genre
-     * @param author Media Author
-     * @param date Publication Date of Media
-     * @param dDecimal Dewey Decimal of Genre
-     * @param timesBorrowed Total Times Borrowed
+     * @param title          Media Title
+     * @param genre          Media Genre
+     * @param author         Media Author
+     * @param date           Publication Date of Media
+     * @param theDecimal     Unique Book ID
+     * @param timesBorrowed  Total Times Borrowed
      * @param personalReview User's Opinion of Media
      * @author J.Bian
      */
@@ -20,21 +19,19 @@ public abstract class Media {
     private String genre;
     private String author;
     private int date;
-    private double dDecimal;
+    private double theDecimal;
     private int timesBorrowed;
     private String personalReview;
 
-    public Media(){}
-
-    public Media(String theTitle, String theGenre, String theAuthor, int publishDate, double theDecimal, int borrow, String yourReview) {
-        title = theTitle;
-        genre = theGenre;
-        author = theAuthor;
-        date = publishDate;
-        dDecimal = theDecimal;
-        timesBorrowed = borrow;
-        personalReview = yourReview;
-
+    public Media(String title, String genre, String author, int date, double theDecimal, int timesBorrowed,
+            String personalReview) {
+        this.title = title;
+        this.genre = genre;
+        this.author = author;
+        this.date = date;
+        this.theDecimal = theDecimal;
+        this.timesBorrowed = timesBorrowed;
+        this.personalReview = personalReview;
     }
 
     // Getter & Setter Methods
@@ -55,7 +52,7 @@ public abstract class Media {
     }
 
     public double getDecimal() {
-        return dDecimal;
+        return theDecimal;
     }
 
     public int getBorrowed() {
@@ -82,8 +79,8 @@ public abstract class Media {
         this.date = date;
     }
 
-    public void setdDecimal(double dDecimal) {
-        this.dDecimal = dDecimal;
+    public void setdDecimal(double theDecimal) {
+        this.theDecimal = theDecimal;
     }
 
     public void setTimesBorrowed(int timesBorrowed) {
@@ -93,7 +90,18 @@ public abstract class Media {
     public void setPersonalReview(String personalReview) {
         this.personalReview = personalReview;
     }
-    
+
+    public String toString() {
+        return
+            "--------------------------------------\n" + 
+            "Title: "  + getTitle() + "\n" + 
+            "Genre: " + getGenre() + "\n" + 
+            "Author: " + getAuthor() + "\n" +
+            "Date Published: " + getPublishDate() + "\n" + 
+            "Dewey Decimal: " + getDecimal() + "\n" + 
+            "Personal Review: " + getReview() + "\n";
+    }
+
     // Intializing Abstract for subclasses to use
     public abstract int overallFame();
 

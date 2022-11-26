@@ -9,7 +9,7 @@ public class historicalText extends Book {
      * @param theGenre       Media Genre
      * @param theAuthor      Media Author
      * @param publishDate    Publication Date of Media
-     * @param theDecimal     Dewey Decimal of Genre
+     * @param theDecimal     Unique Historical Text ID
      * @param borrow         Times Borrowed
      * @param yourReview     User's Opinion of Media
      * @param topicOfHistory Topic of History Covered
@@ -33,12 +33,7 @@ public class historicalText extends Book {
 
     // Returns all information of historicalText
     public String toString() {
-        return "--------------------------------------\n" +
-                "Title: " + getTitle() + "\n" +
-                "Genre: " + getGenre() + "\n" +
-                "Author: " + getAuthor() + "\n" +
-                "Date Published: " + getPublishDate() + "\n" +
-                "Dewey Decimal: " + getDecimal() + "\n" +
+        return super.toString() +
                 "Topic of History: " + getHistory() + "\n";
     }
 }

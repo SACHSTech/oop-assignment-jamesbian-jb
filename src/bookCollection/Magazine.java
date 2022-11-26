@@ -9,7 +9,7 @@ public class Magazine extends Book {
      * @param theGenre     Media Genre
      * @param theAuthor    Media Author
      * @param publishDate  Publication Date of Media
-     * @param theDecimal   Dewey Decimal of Genre
+     * @param theDecimal   Unique Magazine ID
      * @param borrow       Times Borrowed
      * @param yourReview   User's Opinion of Media
      * @param extraFeature Additional content inside Magazine
@@ -36,12 +36,7 @@ public class Magazine extends Book {
 
     // Returns all public information of Magazine
     public String toString() {
-        return "--------------------------------------\n" +
-                "Title: " + getTitle() + "\n" +
-                "Genre: " + getGenre() + "\n" +
-                "Author: " + getAuthor() + "\n" +
-                "Date Published: " + getPublishDate() + "\n" +
-                "Dewey Decimal: " + getDecimal() + "\n" +
-                "Extra Content: " + getExtraFeature()+ "\n";
+        return super.toString() +
+            "Extra Content: " + getExtraFeature()+ "\n";
     }
 }

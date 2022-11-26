@@ -9,7 +9,7 @@ public class videoGame extends Media {
      * @param theGenre    Media Genre
      * @param theAuthor   Media Author
      * @param publishDate Publication Date of Media
-     * @param theDecimal  Dewey Decimal of Genre
+     * @param theDecimal  Unique Video Game ID
      * @param borrow      Times Borrowed
      * @param yourReview  Publication Date of Media
      * @param isStardew   Checks if it is the best game in the world
@@ -36,12 +36,7 @@ public class videoGame extends Media {
 
     // Returns all information of videoGame
     public String toString() {
-        return "--------------------------------------\n" +
-                "Title: " + getTitle() + "\n" +
-                "Genre: " + getGenre() + "\n" +
-                "Author: " + getAuthor() + "\n" +
-                "Date Published: " + getPublishDate() + "\n" +
-                "Dewey Decimal: " + getDecimal() + "\n" +
+        return super.toString() +
                 "Is stardew: " + getStardew() + "\n";
     }
 }
