@@ -92,14 +92,13 @@ public abstract class Media {
     }
 
     public String toString() {
-        return
-            "--------------------------------------\n" + 
-            "Title: "  + getTitle() + "\n" + 
-            "Genre: " + getGenre() + "\n" + 
-            "Author: " + getAuthor() + "\n" +
-            "Date Published: " + getPublishDate() + "\n" + 
-            "Dewey Decimal: " + getDecimal() + "\n" + 
-            "Personal Review: " + getReview() + "\n";
+        return "--------------------------------------\n" +
+                "Title: " + getTitle() + "\n" +
+                "Genre: " + getGenre() + "\n" +
+                "Author: " + getAuthor() + "\n" +
+                "Date Published: " + getPublishDate() + "\n" +
+                "Dewey Decimal: " + getDecimal() + "\n" +
+                "Personal Review: " + getReview() + "\n";
     }
 
     // Intializing Abstract for subclasses to use

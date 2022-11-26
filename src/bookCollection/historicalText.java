@@ -12,7 +12,7 @@ public class historicalText extends Book {
      * @param theDecimal     Unique Historical Text ID
      * @param borrow         Times Borrowed
      * @param yourReview     User's Opinion of Media
-     * @param topicOfHistory Topic of History Covered
+     * @param topicOfHistory Topic of History historicalText Covers
      * @author J.Bian
      */
 

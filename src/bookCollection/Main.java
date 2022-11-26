@@ -19,6 +19,7 @@ public class Main {
     List<Media> titleMedia = new ArrayList<Media>();
     List<Media> allMedia = new ArrayList<Media>();
 
+    // Method to concat all objects into Main
     public void intialize() {
         Book station_11 = new Book("Station 11", "Science Fiction", "Emily Mandel", 2014, 302, 20912, " ");
         Book wonder = new Book("Wonder", "Realistic", "R.J Palacio", 2012, 002, 19902, " ");
@@ -64,6 +65,7 @@ public class Main {
         return allMedia;
     }
 
+    // Find by author algorithm
     public List<Media> findAllByAuthor(String author) {
         for (Media media : allMedia) {
             if (media.getAuthor().equals(author)) {
@@ -73,6 +75,7 @@ public class Main {
         return authorWorks;
     }
 
+    // Find by title algorithm
     public List<Media> findAllByTitle(String title) {
         for (Media media : allMedia) {
             if (media.getTitle().equals(title)) {
@@ -82,6 +85,7 @@ public class Main {
         return titleMedia;
     }
 
+    // Search for the Unique ID of the Media
     public Media getByUniqueID(double uniqueID) {
         Media mediaFound = null;
         for (Media media : allMedia) {
@@ -192,7 +196,7 @@ public class Main {
         System.out.println("");
         TimeUnit.SECONDS.sleep(3);
 
-        // Switchcase that allows user to
+        // Switchcase that allows user to choost between the options of functionality
         while (true) {
             action = bomenaMain.getAction();
 
@@ -230,8 +234,8 @@ public class Main {
                     }
                     break;
 
+                // Adding a new book to the Catalogue
                 case 2:
-                    // Adding a new book to the Catalogue
                     System.out.println("Enter book Name: ");
                     findTitle = input.readLine();
                     System.out.println("Enter the genre of the book: ");
@@ -246,6 +250,7 @@ public class Main {
                     bomenaMain.getListOfMedias();
 
                     break;
+                // Leave a review on the book
                 case 3:
                     System.out.println("Enter Unique ID of Media: ");
                     searchID = Double.parseDouble(input.readLine());
@@ -256,6 +261,8 @@ public class Main {
                     idMedia.setPersonalReview(enterReview);
                     bomenaMain.getListOfMedias();
                     break;
+
+                // Statistics on the library
                 case 4:
                     int numBooks = bomenaMain.getBookCount();
                     System.out.println("Total number of Books: " + numBooks);

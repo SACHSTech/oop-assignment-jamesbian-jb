@@ -26,10 +26,12 @@ public class videoGame extends Media {
 
     }
 
+    // Getter Method
     boolean getStardew() {
         return isStardew;
     }
 
+    // Abstract
     public int overallFame() {
         return (getBorrowed() / getPublishDate());
     }

@@ -12,7 +12,7 @@ public class Magazine extends Book {
      * @param theDecimal   Unique Magazine ID
      * @param borrow       Times Borrowed
      * @param yourReview   User's Opinion of Media
-     * @param extraFeature Additional content inside Magazine
+     * @param extraFeature Additional content featured inside Magazine
      * @author J.Bian
      */
     private String extraFeature;
@@ -37,6 +37,6 @@ public class Magazine extends Book {
     // Returns all public information of Magazine
     public String toString() {
         return super.toString() +
-            "Extra Content: " + getExtraFeature()+ "\n";
+                "Extra Content: " + getExtraFeature() + "\n";
     }
 }
