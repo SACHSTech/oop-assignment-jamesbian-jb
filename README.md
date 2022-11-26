@@ -6,6 +6,7 @@
 *Insert Class Diagram here*  
 
 ## Summary
-*Include a brief summary that describes your system that your are modelling*
+The program is designed to model a online library system where the user can sort through books availble, leave reviews, suggest new books, and research statistics on the library. The visitor may look at the database of media availble in a complete list, but they can also filter through the database for specific works from an author, or specific titles. The visitor can leave their personal opinion on a book, and can also suggest a new book to be included in the database. Finally, the user can see information about the library itself. To store the large collection of books, an assortment of classes are used to keep related parameters under a general class of media, with each type of object using unique parameters as well.
 
-<image src = "https://github.com/SACHSTech/oop-assignment-jamesbian-jb/blob/main/src/bookCollection/class-diagram.png">
+
+
