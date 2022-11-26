@@ -3,6 +3,18 @@ package bookCollection;
 public abstract class Media {
 
 
+    /**
+     * Media constructor
+     * 
+     * @param title Media Title
+     * @param genre Media Genre
+     * @param author Media Author
+     * @param date Publication Date of Media
+     * @param dDecimal Dewey Decimal of Genre
+     * @param timesBorrowed Total Times Borrowed
+     * @param personalReview User's Opinion of Media
+     * @author J.Bian
+     */
 
     private String title;
     private String genre;
@@ -25,6 +37,7 @@ public abstract class Media {
 
     }
 
+    // Getter & Setter Methods
     public String getTitle() {
         return title;
     }
@@ -81,7 +94,7 @@ public abstract class Media {
         this.personalReview = personalReview;
     }
     
-
+    // Intializing Abstract for subclasses to use
     public abstract int overallFame();
 
 }
