@@ -3,7 +3,7 @@ package bookCollection;
 public class videoGame extends Media {
 
     /**
-     * Movie constructor
+     * videoGame constructor
      * 
      * @param theTitle    Media Title
      * @param theGenre    Media Genre
